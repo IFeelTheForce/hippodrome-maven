@@ -99,7 +99,7 @@ public class Horse {
      *
      * @param age Возраст лошади.
      * @throws IllegalArgumentException Если возраст лошади меньше чем
-     * {@value #MIN_AGE} и больше чем {@value #MAX_AGE}.
+     *                                  {@value #MIN_AGE} и больше чем {@value #MAX_AGE}.
      */
     public void setAge(int age) {
         if (age > MAX_AGE || age < MIN_AGE) {
@@ -115,7 +115,7 @@ public class Horse {
      *
      * @param hunger Уровень голода лошади.
      * @throws IllegalArgumentException Если голод лошади меньше чем
-     * {@value #HUNGER_LOWER_BOUND} и больше чем {@value #HUNGER_UPPER_BOUND}.
+     *                                  {@value #HUNGER_LOWER_BOUND} и больше чем {@value #HUNGER_UPPER_BOUND}.
      */
     public void setHunger(double hunger) {
         if (hunger > HUNGER_UPPER_BOUND || hunger < HUNGER_LOWER_BOUND) {
@@ -131,7 +131,7 @@ public class Horse {
      *
      * @param health Уровень здоровья лошади.
      * @throws IllegalArgumentException Если здоровье лошади меньше чем
-     * {@value #HEALTH_LOWER_BOUND} и больше чем {@value #HEALTH_UPPER_BOUND}.
+     *                                  {@value #HEALTH_LOWER_BOUND} и больше чем {@value #HEALTH_UPPER_BOUND}.
      */
     public void setHealth(int health) {
         if (health > HEALTH_UPPER_BOUND || health < HEALTH_LOWER_BOUND) {

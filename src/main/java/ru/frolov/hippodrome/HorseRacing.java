@@ -186,7 +186,7 @@ public class HorseRacing {
     /**
      * Убрать лошадей из скачек.
      *
-     * @param horses
+     * @param horses Лошади.
      */
     public void removeHorses(Horse... horses) {
         for (Horse horse : horses) {
@@ -221,10 +221,10 @@ public class HorseRacing {
      * @return Хэш-таблица названий и значений коэффициентов.
      */
     private HashMap<String, Double> evaluateHorseCoeffs(Horse horse) {
-        double powerCoeff = horse.getBreed().getPower() / POWER_COEFF_DIVIDER;
-        double enduranceCoeff = horse.getBreed().getEndurance() / ENDURANCE_COEFF_DIVIDER;
-        double ageCoeff = horse.getAgePeriod().getPowerCoeff();
-        HashMap<String, Double> coeffs = new HashMap<>();
+        final var powerCoeff = horse.getBreed().getPower() / POWER_COEFF_DIVIDER;
+        final var enduranceCoeff = horse.getBreed().getEndurance() / ENDURANCE_COEFF_DIVIDER;
+        final var ageCoeff = horse.getAgePeriod().getPowerCoeff();
+        final var coeffs = new HashMap<String, Double>();
         coeffs.put(POWER_COEFF, powerCoeff);
         coeffs.put(ENDURANCE_COEFF, enduranceCoeff);
         coeffs.put(AGE_COEFF, ageCoeff);
@@ -251,11 +251,12 @@ public class HorseRacing {
      * Вычислить значение коэффициента времени года для лошади.
      */
     private double evaluateSeasonCoeff(Horse horse) {
-        double seasonCoeff = SEASON_COEFF_BASE - season.getDifficultyFactor() / SEASON_COEFF_DIVIDER;
+        final var seasonCoeff = SEASON_COEFF_BASE - season.getDifficultyFactor() / SEASON_COEFF_DIVIDER;
         if (season == horse.getBreed().getComfortableSeason()) {
-            seasonCoeff = Math.min(seasonCoeff + SEASON_HORSE_BUFF, SEASON_COEFF_BASE);
+            return Math.min(seasonCoeff + SEASON_HORSE_BUFF, SEASON_COEFF_BASE);
+        } else {
+            return seasonCoeff;
         }
-        return seasonCoeff;
     }
 
     /**
@@ -280,7 +281,7 @@ public class HorseRacing {
      */
     private void horseHungerIncrease(double distance, Horse horse) {
         if (horse.getHunger() != Horse.HUNGER_UPPER_BOUND) {
-            double hunger = horse.getHunger() + distance /
+            final var hunger = horse.getHunger() + distance /
                     Horse.HUNGER_INCREASE_DISTANCE * HUNGER_INCREASE_COEFF;
             horse.setHunger(Math.min(hunger, Horse.HUNGER_UPPER_BOUND));
         }
@@ -294,7 +295,7 @@ public class HorseRacing {
      */
     private void horseHealthDecrease(int healthDecrease, Horse horse) {
         if (horse.getHealth() != Horse.HEALTH_LOWER_BOUND) {
-            int health = horse.getHealth() - healthDecrease;
+            final var health = horse.getHealth() - healthDecrease;
             horse.setHealth(Math.max(health, Horse.HEALTH_LOWER_BOUND));
         }
     }
@@ -308,7 +309,7 @@ public class HorseRacing {
      * @return Время.
      */
     private double evaluateTime(double distance, Horse horse, HashMap<String, Double> coeffs) {
-        double horseSpeed = Horse.MAX_SPEED_METERS_SECONDS * coeffs.get(POWER_COEFF) *
+        final var horseSpeed = Horse.MAX_SPEED_METERS_SECONDS * coeffs.get(POWER_COEFF) *
                 coeffs.get(ENDURANCE_COEFF) * coeffs.get(AGE_COEFF) * coverageCoeff *
                 coeffs.get(SEASON_COEFF) * weatherCoeff * evaluateHungerCoeff(horse) *
                 evaluateHealthCoeff(horse);
@@ -323,27 +324,23 @@ public class HorseRacing {
      * @return Время.
      */
     private double horseRaceTime(Horse horse, HashMap<String, Double> coeffs) {
-        int eventCount = 0;
-        double time = 0D;
-        double currentDistance = 0D;
-        double remainingDistance = hippodrome.getDistanceMeters();
+        var eventCount = 0;
+        var time = 0D;
+        var currentDistance = 0D;
+        var remainingDistance = hippodrome.getDistanceMeters();
         for (int i = 0; i < (int) hippodrome.getDistanceMeters(); i++) {
             currentDistance += 1D;
             Event event = eventCount < MAX_EVENT_NUMBER && Math.random() <= EVENT_APPEAR_PROBABILITY ?
                     Event.chooseRandomEvent() : null;
-            if (event != null) {
+            if (currentDistance == Math.round(Horse.HUNGER_INCREASE_DISTANCE) || event != null) {
                 time += evaluateTime(currentDistance, horse, coeffs);
                 horseHungerIncrease(currentDistance, horse);
-                horseHealthDecrease(event.getPenalty(), horse);
                 remainingDistance -= currentDistance;
                 currentDistance = 0D;
-                eventCount++;
             }
-            if (currentDistance == Math.round(Horse.HUNGER_INCREASE_DISTANCE)) {
-                time += evaluateTime(currentDistance, horse, coeffs);
-                horseHungerIncrease(currentDistance, horse);
-                remainingDistance -= currentDistance;
-                currentDistance = 0D;
+            if (event != null) {
+                horseHealthDecrease(event.getPenalty(), horse);
+                eventCount++;
             }
         }
         return time + evaluateTime(remainingDistance, horse, coeffs);
@@ -356,7 +353,7 @@ public class HorseRacing {
      * за которое лошадь проходит дистанцию ипподрома.
      */
     public HashMap<Horse, Double> holdRace() {
-        HashMap<Horse, Double> times = new HashMap<>(horses.size());
+        final var times = new HashMap<Horse, Double>(horses.size());
         horses.forEach((k, v) -> times.put(k, horseRaceTime(k, v)));
         return times;
     }
