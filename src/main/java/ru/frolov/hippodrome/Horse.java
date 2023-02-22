@@ -9,6 +9,9 @@ import ru.frolov.hippodrome.enums.AgePeriod;
 import ru.frolov.hippodrome.enums.Color;
 import ru.frolov.hippodrome.enums.Gender;
 import ru.frolov.hippodrome.enums.HorseBreed;
+import ru.frolov.hippodrome.enums.HorseName;
+
+import java.util.Random;
 
 /**
  * Лошадь.
@@ -84,6 +87,22 @@ public class Horse {
      * Уровень здоровья лошади.
      */
     private int health = 100;
+
+    /**
+     * Создать случайную лошадь.
+     *
+     * @return Лошадь.
+     */
+    public static Horse random() {
+        return builder()
+                .name(HorseName.random().getCyrillic())
+                .gender(Gender.random())
+                .breed(HorseBreed.random())
+                .color(Color.random())
+                .age(new Random().nextInt(1, 31))
+                .build();
+
+    }
 
     @Builder
     public Horse(String name, Gender gender, HorseBreed breed, Color color, int age) {

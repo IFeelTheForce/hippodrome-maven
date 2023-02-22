@@ -8,6 +8,7 @@ import ru.frolov.hippodrome.enums.Season;
 import ru.frolov.hippodrome.enums.Weather;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Скачки лошадей.
@@ -142,76 +143,6 @@ public class HorseRacing {
     private void initHorses(Horse... horses) {
         this.horses = new HashMap<>();
         addHorses(horses);
-    }
-
-    /**
-     * Установить ипподром, на котором проходят скачки.
-     *
-     * @param hippodrome Ипподром.
-     */
-    public void setHippodrome(Hippodrome hippodrome) {
-        this.hippodrome = hippodrome;
-        evaluateCoverageCoeff();
-    }
-
-    /**
-     * Получить лошадей, участвующих в скачках.
-     *
-     * @return Массив лошадей.
-     */
-    public Horse[] getHorses() {
-        return horses.keySet().toArray(new Horse[0]);
-    }
-
-    /**
-     * Установить лошадей, которые будут участвовать в скачках.
-     *
-     * @param horses Лошади.
-     */
-    public void setHorses(Horse... horses) {
-        initHorses(horses);
-    }
-
-    /**
-     * Добавить лошадей, которые будут участвовать в скачках.
-     *
-     * @param horses Лошади.
-     */
-    public void addHorses(Horse... horses) {
-        for (Horse horse : horses) {
-            this.horses.put(horse, evaluateHorseCoeffs(horse));
-        }
-    }
-
-    /**
-     * Убрать лошадей из скачек.
-     *
-     * @param horses Лошади.
-     */
-    public void removeHorses(Horse... horses) {
-        for (Horse horse : horses) {
-            this.horses.remove(horse);
-        }
-    }
-
-    /**
-     * Установить погоду.
-     *
-     * @param weather Погода, при которой будут происходить скачки.
-     */
-    public void setWeather(Weather weather) {
-        this.weather = weather;
-        evaluateWeatherCoeff();
-    }
-
-    /**
-     * Установить время года.
-     *
-     * @param season Время года, в которое будут происходить скачки.
-     */
-    public void setSeason(Season season) {
-        this.season = season;
-        horses.forEach((k, v) -> v.replace(SEASON_COEFF, evaluateSeasonCoeff(k)));
     }
 
     /**
@@ -352,10 +283,80 @@ public class HorseRacing {
      * @return Хэш-таблица, в которой ключи -- лошади, а значения -- время,
      * за которое лошадь проходит дистанцию ипподрома.
      */
-    public HashMap<Horse, Double> holdRace() {
+    public Map<Horse, Double> holdRace() {
         final var times = new HashMap<Horse, Double>(horses.size());
         horses.forEach((k, v) -> times.put(k, horseRaceTime(k, v)));
         return times;
+    }
+
+    /**
+     * Установить ипподром, на котором проходят скачки.
+     *
+     * @param hippodrome Ипподром.
+     */
+    public void setHippodrome(Hippodrome hippodrome) {
+        this.hippodrome = hippodrome;
+        evaluateCoverageCoeff();
+    }
+
+    /**
+     * Получить лошадей, участвующих в скачках.
+     *
+     * @return Массив лошадей.
+     */
+    public Horse[] getHorses() {
+        return horses.keySet().toArray(new Horse[0]);
+    }
+
+    /**
+     * Установить лошадей, которые будут участвовать в скачках.
+     *
+     * @param horses Лошади.
+     */
+    public void setHorses(Horse... horses) {
+        initHorses(horses);
+    }
+
+    /**
+     * Добавить лошадей, которые будут участвовать в скачках.
+     *
+     * @param horses Лошади.
+     */
+    public void addHorses(Horse... horses) {
+        for (Horse horse : horses) {
+            this.horses.put(horse, evaluateHorseCoeffs(horse));
+        }
+    }
+
+    /**
+     * Убрать лошадей из скачек.
+     *
+     * @param horses Лошади.
+     */
+    public void removeHorses(Horse... horses) {
+        for (Horse horse : horses) {
+            this.horses.remove(horse);
+        }
+    }
+
+    /**
+     * Установить погоду.
+     *
+     * @param weather Погода, при которой будут происходить скачки.
+     */
+    public void setWeather(Weather weather) {
+        this.weather = weather;
+        evaluateWeatherCoeff();
+    }
+
+    /**
+     * Установить время года.
+     *
+     * @param season Время года, в которое будут происходить скачки.
+     */
+    public void setSeason(Season season) {
+        this.season = season;
+        horses.forEach((k, v) -> v.replace(SEASON_COEFF, evaluateSeasonCoeff(k)));
     }
 
     /**
@@ -378,12 +379,22 @@ public class HorseRacing {
 
     @Override
     public String toString() {
-        return "HorseRacing{" +
-                "hippodrome=" + hippodrome +
-                ", horses=" + horses.keySet() +
-                ", weather=" + weather +
-                ", season=" + season +
-                '}';
+        StringBuilder builder = new StringBuilder();
+        builder.append("HorseRacing{")
+                .append("\nhippodrome=")
+                .append(hippodrome)
+                .append(",\nhorses=[");
+        horses.keySet().forEach(v -> {
+            builder.append(v)
+                    .append("\n");
+        });
+        builder.append("]")
+                .append(",\nweather=")
+                .append(weather)
+                .append(",\nseason=")
+                .append(season)
+                .append("}");
+        return builder.toString();
     }
 
     /**

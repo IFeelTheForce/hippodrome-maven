@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3609511-37f3-4548-b7a3-2cbde5475286" name="Changes" comment="Refactor">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseNames.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/ElementSelection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Title.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/Hippodrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/Hippodrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/Horse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/HorseRacing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/HorseRacing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/AgePeriod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/AgePeriod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Coverage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Coverage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Gender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseBreed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseBreed.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
+        <option value="Class" />
         <option value="Enum" />
       </list>
     </option>
@@ -57,6 +71,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Обучение Java\maven-programs\hippodrome\target" />
       <recent name="E:\Обучение Java\hippodrome\src\main\java\ru\frolov\hippodrome" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.frolov.hippodrome.enums" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -116,7 +133,42 @@
       <option name="project" value="LOCAL" />
       <updated>1677063967718</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactor">
+      <created>1677064492334</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677064492334</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Refactor">
+      <created>1677065617348</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677065617348</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Refactor">
+      <created>1677065686881</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1677065686881</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Refactor">
+      <created>1677065762563</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677065762563</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Refactor">
+      <created>1677065809485</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1677065809485</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -18,6 +18,10 @@ public enum Coverage {
     NORMAL("нормальное", 0);
 
     /**
+     * Концы отрезков распределения покрытий ипподрома.
+     */
+    private static final double[] intervals = ElementSelection.split(values().length);
+    /**
      * Название покрытия на русском.
      */
     private final String cyrillic;
@@ -26,5 +30,12 @@ public enum Coverage {
      */
     private final int difficultyFactor;
 
+    /**
+     * Получить случайное покрытие.
+     *
+     * @return Покрытие ипподрома.
+     */
+    public static Coverage random() {
+        return ElementSelection.randomElement(intervals, values());
+    }
 }
-

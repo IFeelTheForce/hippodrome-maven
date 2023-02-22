@@ -18,6 +18,10 @@ public enum HorseBreed {
     ALTAI("алтайская", 55, 100, Season.WINTER);
 
     /**
+     * Концы отрезков распределения пород лошадей.
+     */
+    private static final double[] intervals = ElementSelection.split(values().length);
+    /**
      * Название породы на русском.
      */
     private final String cyrillic;
@@ -33,4 +37,13 @@ public enum HorseBreed {
      * Комфортное время года.
      */
     private final Season comfortableSeason;
+
+    /**
+     * Получить случайную породу лошади.
+     *
+     * @return Порода лошади.
+     */
+    public static HorseBreed random() {
+        return ElementSelection.randomElement(intervals, values());
+    }
 }

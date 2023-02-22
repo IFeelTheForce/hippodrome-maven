@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import ru.frolov.hippodrome.enums.Coverage;
+import ru.frolov.hippodrome.enums.Title;
+
+import java.util.Random;
 
 /**
  * Ипподром.
@@ -16,6 +19,7 @@ import ru.frolov.hippodrome.enums.Coverage;
 @ToString
 @Builder
 public class Hippodrome {
+    private static final double MAX_DISTANCE_METERS = 1500D;
     /**
      * Минимальная дистанция ипподрома в метрах.
      */
@@ -32,6 +36,20 @@ public class Hippodrome {
      * Дистанция ипподрома в метрах.
      */
     private double distanceMeters;
+
+    /**
+     * Создать случайный ипподром.
+     *
+     * @return Ипподром.
+     */
+    public static Hippodrome random() {
+        return builder()
+                .title(Title.random().getCyrillic())
+                .coverage(Coverage.random())
+                .distanceMeters(new Random().nextDouble(MIN_DISTANCE_METERS,
+                        MAX_DISTANCE_METERS + 1D))
+                .build();
+    }
 
     public Hippodrome(String title, Coverage coverage, double distanceMeters) {
         this.title = title;

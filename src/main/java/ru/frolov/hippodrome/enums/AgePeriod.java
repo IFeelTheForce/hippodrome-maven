@@ -11,10 +11,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public enum AgePeriod {
-    DEVELOPING(0.7),
+    DEVELOPING(0.95),
     PRIME(1.0),
-    PAST_PRIME(0.8),
-    OLD(0.6);
+    PAST_PRIME(0.9),
+    OLD(0.8);
 
     /**
      * Верхняя граница {@link #DEVELOPING}.
