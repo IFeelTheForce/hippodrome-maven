@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3609511-37f3-4548-b7a3-2cbde5475286" name="Changes" comment="Random horse racing version 1">
+    <list default="true" id="a3609511-37f3-4548-b7a3-2cbde5475286" name="Changes" comment="HorseRacing.random refactor">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/RaceCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/interfaces/IRaceCache.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/HorseRacing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/HorseRacing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -42,7 +43,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2Lm2ZEuoeGovWzyjz5KMjrN3HQ2" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -175,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677154156534</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="HorseRacing.random refactor">
+      <created>1677155209347</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1677155209347</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -195,6 +205,7 @@
     <MESSAGE value="Refactor" />
     <MESSAGE value="Creating a random horse and hippodrome" />
     <MESSAGE value="Random horse racing version 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Random horse racing version 1" />
+    <MESSAGE value="HorseRacing.random refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="HorseRacing.random refactor" />
   </component>
 </project>
