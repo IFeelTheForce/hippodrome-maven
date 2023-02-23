@@ -20,9 +20,8 @@ public class Main {
             System.out.println(horse);
         }
         System.out.println();
-        final var results = raceCache.getRaceResult();
         System.out.println("Лошади после забега:");
-        results.forEach((k, v) -> {
+        raceCache.getRaceResult().forEach((k, v) -> {
             System.out.println(k);
             System.out.printf("Время прохождения дистанции %.2f м = %.3f с%n",
                     raceCache.getCurrentRace().getHippodrome().getDistanceMeters(), v);
