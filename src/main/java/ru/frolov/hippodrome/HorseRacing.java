@@ -1,11 +1,14 @@
 package ru.frolov.hippodrome;
 
+import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import ru.frolov.hippodrome.enums.Event;
+import ru.frolov.hippodrome.enums.HorseName;
 import ru.frolov.hippodrome.enums.Season;
 import ru.frolov.hippodrome.enums.Weather;
+import ru.frolov.hippodrome.exceptions.IllegalOperationException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -91,6 +94,10 @@ public class HorseRacing {
      */
     private static final int MAX_EVENT_NUMBER = 3;
     /**
+     * Число лошадей в скачках по умолчанию.
+     */
+    public static final int DEFAULT_HORSE_COUNT = 5;
+    /**
      * Ипподром, на котором происходят скачки
      */
     private Hippodrome hippodrome;
@@ -112,13 +119,50 @@ public class HorseRacing {
     /**
      * Коэффициент сложности покрытия ипподрома.
      */
+    @Getter(AccessLevel.PRIVATE)
+    @Setter(AccessLevel.PRIVATE)
     @EqualsAndHashCode.Exclude
     private double coverageCoeff;
     /**
      * Коэффициент сложности погоды, при которой происходят скачки.
      */
+    @Getter(AccessLevel.PRIVATE)
+    @Setter(AccessLevel.PRIVATE)
     @EqualsAndHashCode.Exclude
     private double weatherCoeff;
+
+    /**
+     * Создать случайные скачки.
+     *
+     * @return Скачки.
+     */
+    public static HorseRacing random() {
+        return random(DEFAULT_HORSE_COUNT);
+    }
+
+    /**
+     * Создать случайные скачки.
+     *
+     * @param horseCount Количество лошадей в скачках.
+     * @return Скачки.
+     */
+    public static HorseRacing random(int horseCount) {
+        if (horseCount < 1) {
+            throw new IllegalArgumentException("The number of horses cannot be less than one.");
+        }
+        final var horses = new HashMap<Horse, String>(horseCount);
+        for (int i = 0; i < horseCount; i++) {
+            final var horse = Horse.random(HorseName.random(horses.values()
+                    .toArray(new String[0])).getCyrillic());
+            horses.put(horse, horse.getName());
+        }
+        return builder()
+                .hippodrome(Hippodrome.random())
+                .horses(horses.keySet().toArray(new Horse[0]))
+                .weather(Weather.random())
+                .season(Season.random())
+                .build();
+    }
 
     /**
      * @param hippodrome Ипподром.
@@ -284,6 +328,10 @@ public class HorseRacing {
      * за которое лошадь проходит дистанцию ипподрома.
      */
     public Map<Horse, Double> holdRace() {
+        if (horses.size() == 0) {
+            throw new IllegalOperationException(
+                    "The number of horses participating in the race cannot be less than one.");
+        }
         final var times = new HashMap<Horse, Double>(horses.size());
         horses.forEach((k, v) -> times.put(k, horseRaceTime(k, v)));
         return times;

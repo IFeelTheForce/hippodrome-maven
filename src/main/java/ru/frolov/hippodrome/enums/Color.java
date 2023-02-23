@@ -8,7 +8,7 @@ public enum Color {
     /**
      * Концы отрезков распределения цветов лошадей.
      */
-    private static final double[] intervals = ElementSelection.split(values().length);
+    private static final double[] intervals = EnumElementSelection.split(values().length);
 
     /**
      * Получить случайный цвет.
@@ -16,6 +16,6 @@ public enum Color {
      * @return Порода лошади.
      */
     public static Color random() {
-        return ElementSelection.randomElement(intervals, values());
+        return EnumElementSelection.randomElement(intervals, values());
     }
 }

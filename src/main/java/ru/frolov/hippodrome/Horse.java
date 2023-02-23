@@ -94,14 +94,23 @@ public class Horse {
      * @return Лошадь.
      */
     public static Horse random() {
+        return random(HorseName.random().getCyrillic());
+
+    }
+
+    /**
+     * Создать случайную лошадь.
+     * @param name Имя лошади.
+     * @return Лошадь.
+     */
+    public static Horse random(String name) {
         return builder()
-                .name(HorseName.random().getCyrillic())
+                .name(name)
                 .gender(Gender.random())
                 .breed(HorseBreed.random())
                 .color(Color.random())
                 .age(new Random().nextInt(1, 31))
                 .build();
-
     }
 
     @Builder

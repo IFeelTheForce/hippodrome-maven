@@ -1,26 +1,13 @@
 package ru.frolov;
 
-import ru.frolov.hippodrome.Hippodrome;
 import ru.frolov.hippodrome.Horse;
 import ru.frolov.hippodrome.HorseRacing;
-import ru.frolov.hippodrome.enums.Season;
-import ru.frolov.hippodrome.enums.Weather;
-
-import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        Horse firstHorse = Horse.random();
-        Horse secondHorse = Horse.random();
-        Hippodrome hippodrome = Hippodrome.random();
-        HorseRacing racing = HorseRacing.builder()
-                .hippodrome(hippodrome)
-                .horses(firstHorse, secondHorse)
-                .weather(Weather.SNOW)
-                .season(Season.WINTER)
-                .build();
+        HorseRacing racing = HorseRacing.random();
         System.out.println("Ипподром:");
-        System.out.println(hippodrome);
+        System.out.println(racing.getHippodrome());
         System.out.println();
         System.out.println("Погода:");
         System.out.println(racing.getWeather());
@@ -28,10 +15,11 @@ public class Main {
         System.out.println(racing.getSeason());
         System.out.println();
         System.out.println("Лошади до забега:");
-        System.out.println(firstHorse);
-        System.out.println(secondHorse);
+        for (Horse horse : racing.getHorses()) {
+            System.out.println(horse);
+        }
         System.out.println();
-        Map<Horse, Double> results = racing.holdRace();
+        final var results = racing.holdRace();
         System.out.println("Лошади после забега:");
         results.forEach((k, v) -> {
             System.out.println(k);

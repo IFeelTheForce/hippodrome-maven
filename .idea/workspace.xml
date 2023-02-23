@@ -4,21 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3609511-37f3-4548-b7a3-2cbde5475286" name="Changes" comment="Refactor">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/ElementSelection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Title.java" afterDir="false" />
+    <list default="true" id="a3609511-37f3-4548-b7a3-2cbde5475286" name="Changes" comment="Creating a random horse and hippodrome">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/exceptions/IllegalOperationException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/Hippodrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/Hippodrome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/Horse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/HorseRacing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/HorseRacing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/AgePeriod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/AgePeriod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Color.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Coverage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Coverage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/ElementSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/EnumElementSelection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Gender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseBreed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseBreed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Season.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Season.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Title.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Title.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Weather.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -72,7 +72,11 @@
       <recent name="E:\Обучение Java\maven-programs\hippodrome\target" />
       <recent name="E:\Обучение Java\hippodrome\src\main\java\ru\frolov\hippodrome" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ru.frolov.hippodrome" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.frolov.hippodrome" />
       <recent name="ru.frolov.hippodrome.enums" />
     </key>
   </component>
@@ -168,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677065809485</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Creating a random horse and hippodrome">
+      <created>1677079406511</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1677079406511</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,6 +197,7 @@
     <MESSAGE value="Rebase" />
     <MESSAGE value="pom.xml update" />
     <MESSAGE value="Refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
+    <MESSAGE value="Creating a random horse and hippodrome" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating a random horse and hippodrome" />
   </component>
 </project>

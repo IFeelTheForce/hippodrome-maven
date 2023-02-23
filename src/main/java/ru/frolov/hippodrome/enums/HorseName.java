@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
 
+import java.util.Arrays;
+
 /**
  * Имя лошади.
  */
@@ -20,23 +22,44 @@ public enum HorseName {
     COVFEFE("Ковфеф"),
     VINO_ROSSO("Вино Россо"),
     MITOLE("Митол"),
-    WINSTON_C("Уинстон Си");
+    WINSTON_C("Уинстон Си"),
+    KNICKS_GO("Кникс Гоу"),
+    ADAYAR("Адаяр");
 
     /**
      * Концы отрезков распределения имен лошадей.
      */
-    private static final double[] intervals = ElementSelection.split(values().length);
+    private static final double[] intervals = EnumElementSelection.split(values().length);
     /**
      * Имя на русском.
      */
     private final String cyrillic;
 
     /**
-     * Получить случайное имя на русском.
+     * Получить случайное имя.
      *
-     * @return Имя лошади на русском.
+     * @return Имя лошади.
      */
     public static HorseName random() {
-        return ElementSelection.randomElement(intervals, values());
+        return EnumElementSelection.randomElement(intervals, values());
+    }
+
+    /**
+     * Получить случайное имя.
+     *
+     * @param exclude Исключенные имена.
+     * @return Имя лошади.
+     */
+    public static HorseName random(String... exclude) {
+        final var horseNames = Arrays.stream(values()).filter(horseName -> {
+            for (String name : exclude) {
+                if (name.equals(horseName.getCyrillic())) {
+                    return false;
+                }
+            }
+            return true;
+        }).toList().toArray(new HorseName[0]);
+        return EnumElementSelection.randomElement(EnumElementSelection.split(horseNames.length),
+                horseNames);
     }
 }

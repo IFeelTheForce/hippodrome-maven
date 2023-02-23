@@ -17,6 +17,10 @@ public enum Season {
     SPRING("весна", 5);
 
     /**
+     * Концы отрезков распределения времен года.
+     */
+    private static final double[] intervals = EnumElementSelection.split(values().length);
+    /**
      * Название времени года на русском.
      */
     private final String cyrillic;
@@ -24,4 +28,13 @@ public enum Season {
      * Коэффициент сложности времени года.
      */
     private final int difficultyFactor;
+
+    /**
+     * Получить случайное время года.
+     *
+     * @return Время года.
+     */
+    public static Season random() {
+        return EnumElementSelection.randomElement(intervals, values());
+    }
 }

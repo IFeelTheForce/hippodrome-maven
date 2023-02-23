@@ -20,7 +20,7 @@ public enum HorseBreed {
     /**
      * Концы отрезков распределения пород лошадей.
      */
-    private static final double[] intervals = ElementSelection.split(values().length);
+    private static final double[] intervals = EnumElementSelection.split(values().length);
     /**
      * Название породы на русском.
      */
@@ -44,6 +44,6 @@ public enum HorseBreed {
      * @return Порода лошади.
      */
     public static HorseBreed random() {
-        return ElementSelection.randomElement(intervals, values());
+        return EnumElementSelection.randomElement(intervals, values());
     }
 }
