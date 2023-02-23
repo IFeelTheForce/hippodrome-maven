@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3609511-37f3-4548-b7a3-2cbde5475286" name="Changes" comment="Creating a random horse and hippodrome">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/exceptions/IllegalOperationException.java" afterDir="false" />
+    <list default="true" id="a3609511-37f3-4548-b7a3-2cbde5475286" name="Changes" comment="Random horse racing version 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/Horse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/HorseRacing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/HorseRacing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Coverage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Coverage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/ElementSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/EnumElementSelection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Gender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseBreed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseBreed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Season.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Season.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Title.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Title.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/Weather.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677079406511</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Random horse racing version 1">
+      <created>1677154156534</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1677154156534</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -198,6 +194,7 @@
     <MESSAGE value="pom.xml update" />
     <MESSAGE value="Refactor" />
     <MESSAGE value="Creating a random horse and hippodrome" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating a random horse and hippodrome" />
+    <MESSAGE value="Random horse racing version 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Random horse racing version 1" />
   </component>
 </project>

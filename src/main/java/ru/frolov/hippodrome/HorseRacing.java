@@ -150,15 +150,15 @@ public class HorseRacing {
         if (horseCount < 1) {
             throw new IllegalArgumentException("The number of horses cannot be less than one.");
         }
-        final var horses = new HashMap<Horse, String>(horseCount);
+        final var horses = new Horse[horseCount];
+        final var horseNames = new String[horseCount];
         for (int i = 0; i < horseCount; i++) {
-            final var horse = Horse.random(HorseName.random(horses.values()
-                    .toArray(new String[0])).getCyrillic());
-            horses.put(horse, horse.getName());
+            horses[i] = Horse.random(HorseName.random(horseNames).getCyrillic());
+            horseNames[i] = horses[i].getName();
         }
         return builder()
                 .hippodrome(Hippodrome.random())
-                .horses(horses.keySet().toArray(new Horse[0]))
+                .horses(horses)
                 .weather(Weather.random())
                 .season(Season.random())
                 .build();

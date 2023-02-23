@@ -53,7 +53,7 @@ public enum HorseName {
     public static HorseName random(String... exclude) {
         final var horseNames = Arrays.stream(values()).filter(horseName -> {
             for (String name : exclude) {
-                if (name.equals(horseName.getCyrillic())) {
+                if (name != null && name.equals(horseName.getCyrillic())) {
                     return false;
                 }
             }
