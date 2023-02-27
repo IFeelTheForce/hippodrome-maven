@@ -8,12 +8,12 @@ public class EnumElementSelection {
     /**
      * Разбить отрезок [0, 1] на несколько одинаковых частей.
      *
-     * @param length Количество частей.
+     * @param segmentCount Количество частей.
      * @return Массив концов отрезков.
      */
-    public static double[] split(int length) {
-        final var segmentLength = 1.0 / length;
-        final double[] spacing = new double[length + 1];
+    public static double[] split(int segmentCount) {
+        final var segmentLength = 1.0 / segmentCount;
+        final double[] spacing = new double[segmentCount + 1];
         for (int i = 0; i < spacing.length; i++) {
             spacing[i] = segmentLength * i;
         }

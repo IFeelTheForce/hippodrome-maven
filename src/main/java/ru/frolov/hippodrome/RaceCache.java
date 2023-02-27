@@ -13,9 +13,14 @@ import java.util.Map;
 public class RaceCache implements IRaceCache {
     private HorseRacing horseRacing;
 
-    @Override
     public HorseRacing generateNew() {
         horseRacing = HorseRacing.random();
+        return horseRacing;
+    }
+
+    @Override
+    public HorseRacing generateNew(int horseCount) {
+        horseRacing = HorseRacing.random(horseCount);
         return horseRacing;
     }
 
@@ -32,7 +37,7 @@ public class RaceCache implements IRaceCache {
     public Map<Horse, Double> getRaceResult() {
         if (horseRacing == null) {
             throw new IllegalOperationException(
-                    "It is not possible to get the race result, as it is necessary to create it.");
+                    "It is not possible to get the race result, as it is necessary to create a race.");
         }
         return horseRacing.holdRace();
     }

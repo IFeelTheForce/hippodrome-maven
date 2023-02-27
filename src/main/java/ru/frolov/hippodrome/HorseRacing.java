@@ -119,15 +119,15 @@ public class HorseRacing {
     /**
      * Коэффициент сложности покрытия ипподрома.
      */
-    @Getter(AccessLevel.PRIVATE)
-    @Setter(AccessLevel.PRIVATE)
+    @Getter(AccessLevel.NONE)
+    @Setter(AccessLevel.NONE)
     @EqualsAndHashCode.Exclude
     private double coverageCoeff;
     /**
      * Коэффициент сложности погоды, при которой происходят скачки.
      */
-    @Getter(AccessLevel.PRIVATE)
-    @Setter(AccessLevel.PRIVATE)
+    @Getter(AccessLevel.NONE)
+    @Setter(AccessLevel.NONE)
     @EqualsAndHashCode.Exclude
     private double weatherCoeff;
 
@@ -140,8 +140,7 @@ public class HorseRacing {
         return random(DEFAULT_HORSE_COUNT);
     }
 
-    /**
-     * Создать случайные скачки.
+    /** Создать случайные скачки.
      *
      * @param horseCount Количество лошадей в скачках.
      * @return Скачки.
@@ -196,13 +195,10 @@ public class HorseRacing {
      * @return Хэш-таблица названий и значений коэффициентов.
      */
     private HashMap<String, Double> evaluateHorseCoeffs(Horse horse) {
-        final var powerCoeff = horse.getBreed().getPower() / POWER_COEFF_DIVIDER;
-        final var enduranceCoeff = horse.getBreed().getEndurance() / ENDURANCE_COEFF_DIVIDER;
-        final var ageCoeff = horse.getAgePeriod().getPowerCoeff();
         final var coeffs = new HashMap<String, Double>();
-        coeffs.put(POWER_COEFF, powerCoeff);
-        coeffs.put(ENDURANCE_COEFF, enduranceCoeff);
-        coeffs.put(AGE_COEFF, ageCoeff);
+        coeffs.put(POWER_COEFF, horse.getBreed().getPower() / POWER_COEFF_DIVIDER);
+        coeffs.put(ENDURANCE_COEFF, horse.getBreed().getEndurance() / ENDURANCE_COEFF_DIVIDER);
+        coeffs.put(AGE_COEFF, horse.getAgePeriod().getPowerCoeff());
         coeffs.put(SEASON_COEFF, evaluateSeasonCoeff(horse));
         return coeffs;
     }
@@ -432,10 +428,7 @@ public class HorseRacing {
                 .append("\nhippodrome=")
                 .append(hippodrome)
                 .append(",\nhorses=[");
-        horses.keySet().forEach(v -> {
-            builder.append(v)
-                    .append("\n");
-        });
+        horses.keySet().forEach(v -> builder.append(v).append("\n"));
         builder.append("]")
                 .append(",\nweather=")
                 .append(weather)

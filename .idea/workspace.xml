@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3609511-37f3-4548-b7a3-2cbde5475286" name="Changes" comment="RaceCache version 1" />
+    <list default="true" id="a3609511-37f3-4548-b7a3-2cbde5475286" name="Changes" comment="RaceCache version 1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/HorseRacing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/HorseRacing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/RaceCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/RaceCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/EnumElementSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/EnumElementSelection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/interfaces/IRaceCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/interfaces/IRaceCache.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -187,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677156132100</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="RaceCache version 1">
+      <created>1677156212422</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1677156212422</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
