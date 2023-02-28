@@ -3,7 +3,7 @@ package ru.frolov.hippodrome.enums;
 /**
  * Вспомогательный класс для случайного выбора элемента перечисления.
  */
-public final class EnumHelper {
+final class EnumHelper {
 
     /**
      * Разбить отрезок [0, 1] на несколько одинаковых частей.
