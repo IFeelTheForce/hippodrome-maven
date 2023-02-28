@@ -140,7 +140,8 @@ public class HorseRacing {
         return random(DEFAULT_HORSE_COUNT);
     }
 
-    /** Создать случайные скачки.
+    /**
+     * Создать случайные скачки.
      *
      * @param horseCount Количество лошадей в скачках.
      * @return Скачки.
@@ -302,7 +303,7 @@ public class HorseRacing {
         for (int i = 0; i < (int) hippodrome.getDistanceMeters(); i++) {
             currentDistance += 1D;
             Event event = eventCount < MAX_EVENT_NUMBER && Math.random() <= EVENT_APPEAR_PROBABILITY ?
-                    Event.chooseRandomEvent() : null;
+                    Event.random() : null;
             if (currentDistance == Math.round(Horse.HUNGER_INCREASE_DISTANCE) || event != null) {
                 time += evaluateTime(currentDistance, horse, coeffs);
                 horseHungerIncrease(currentDistance, horse);
@@ -423,19 +424,19 @@ public class HorseRacing {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("HorseRacing{")
+        StringBuilder sb = new StringBuilder();
+        sb.append("HorseRacing{")
                 .append("\nhippodrome=")
                 .append(hippodrome)
                 .append(",\nhorses=[");
-        horses.keySet().forEach(v -> builder.append(v).append("\n"));
-        builder.append("]")
+        horses.keySet().forEach(v -> sb.append(v).append("\n"));
+        sb.append("]")
                 .append(",\nweather=")
                 .append(weather)
                 .append(",\nseason=")
                 .append(season)
                 .append("}");
-        return builder.toString();
+        return sb.toString();
     }
 
     /**

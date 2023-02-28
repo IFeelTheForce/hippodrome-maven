@@ -19,7 +19,7 @@ public enum Season {
     /**
      * Концы отрезков распределения времен года.
      */
-    private static final double[] intervals = EnumElementSelection.split(values().length);
+    private static final double[] intervals = EnumHelper.split(values().length);
     /**
      * Название времени года на русском.
      */
@@ -35,6 +35,6 @@ public enum Season {
      * @return Время года.
      */
     public static Season random() {
-        return EnumElementSelection.randomElement(intervals, values());
+        return EnumHelper.randomElement(intervals, values());
     }
 }

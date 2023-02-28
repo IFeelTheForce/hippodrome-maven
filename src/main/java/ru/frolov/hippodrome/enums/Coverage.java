@@ -20,7 +20,7 @@ public enum Coverage {
     /**
      * Концы отрезков распределения покрытий ипподрома.
      */
-    private static final double[] intervals = EnumElementSelection.split(values().length);
+    private static final double[] intervals = EnumHelper.split(values().length);
     /**
      * Название покрытия на русском.
      */
@@ -36,6 +36,6 @@ public enum Coverage {
      * @return Покрытие ипподрома.
      */
     public static Coverage random() {
-        return EnumElementSelection.randomElement(intervals, values());
+        return EnumHelper.randomElement(intervals, values());
     }
 }

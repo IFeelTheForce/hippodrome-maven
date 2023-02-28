@@ -29,7 +29,7 @@ public enum HorseName {
     /**
      * Концы отрезков распределения имен лошадей.
      */
-    private static final double[] intervals = EnumElementSelection.split(values().length);
+    private static final double[] intervals = EnumHelper.split(values().length);
     /**
      * Имя на русском.
      */
@@ -41,7 +41,7 @@ public enum HorseName {
      * @return Имя лошади.
      */
     public static HorseName random() {
-        return EnumElementSelection.randomElement(intervals, values());
+        return EnumHelper.randomElement(intervals, values());
     }
 
     /**
@@ -59,7 +59,7 @@ public enum HorseName {
             }
             return true;
         }).toList().toArray(new HorseName[0]);
-        return EnumElementSelection.randomElement(EnumElementSelection.split(horseNames.length),
+        return EnumHelper.randomElement(EnumHelper.split(horseNames.length),
                 horseNames);
     }
 }

@@ -47,7 +47,7 @@ public enum Event {
      *
      * @return Выбранное случайным образом событие.
      */
-    public static Event chooseRandomEvent() {
+    public static Event random() {
         int index = 0;
         double determiner = Math.random();
         for (int i = 0; i < intervals.length - 1; i++) {

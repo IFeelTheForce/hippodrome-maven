@@ -20,7 +20,7 @@ public enum Weather {
     /**
      * Концы отрезков распределения погод.
      */
-    private static final double[] intervals = EnumElementSelection.split(values().length);
+    private static final double[] intervals = EnumHelper.split(values().length);
     /**
      * Название погоды на русском.
      */
@@ -36,6 +36,6 @@ public enum Weather {
      * @return Погода.
      */
     public static Weather random() {
-        return EnumElementSelection.randomElement(intervals, values());
+        return EnumHelper.randomElement(intervals, values());
     }
 }

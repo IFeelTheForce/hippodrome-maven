@@ -20,7 +20,7 @@ public enum Title {
     /**
      * Концы отрезков распределения названий ипподрома.
      */
-    private static final double[] intervals = EnumElementSelection.split(values().length);
+    private static final double[] intervals = EnumHelper.split(values().length);
     /**
      * Название на русском.
      */
@@ -32,6 +32,6 @@ public enum Title {
      * @return Название ипподрома.
      */
     public static Title random() {
-        return EnumElementSelection.randomElement(intervals, values());
+        return EnumHelper.randomElement(intervals, values());
     }
 }
