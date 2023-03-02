@@ -18,7 +18,6 @@ public class RaceCache implements IRaceCache {
         return horseRacing;
     }
 
-    @Override
     public HorseRacing generateNew(int horseCount) {
         horseRacing = HorseRacing.random(horseCount);
         return horseRacing;

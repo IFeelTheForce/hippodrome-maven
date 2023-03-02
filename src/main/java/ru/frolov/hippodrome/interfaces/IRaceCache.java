@@ -15,14 +15,6 @@ public interface IRaceCache {
     HorseRacing generateNew();
 
     /**
-     * Создать скачки.
-     *
-     * @param horseCount Количество лошадей.
-     * @return Скачки.
-     */
-    HorseRacing generateNew(int horseCount);
-
-    /**
      * Получить текущие скачки.
      *
      * @return Скачки.
