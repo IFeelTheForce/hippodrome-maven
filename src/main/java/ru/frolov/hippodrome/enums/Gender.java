@@ -6,14 +6,12 @@ package ru.frolov.hippodrome.enums;
 public enum Gender {
     MALE, FEMALE;
 
-    private static final double[] intervals = EnumHelper.split(values().length);
-
     /**
      * Получить случайный гендер.
      *
      * @return Гендер лошади.
      */
     public static Gender random() {
-        return EnumHelper.randomElement(intervals, values());
+        return EnumHelper.randomElement(values());
     }
 }

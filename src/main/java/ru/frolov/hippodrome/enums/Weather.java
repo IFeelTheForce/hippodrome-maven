@@ -18,10 +18,6 @@ public enum Weather {
     FOG("туман", 7);
 
     /**
-     * Концы отрезков распределения погод.
-     */
-    private static final double[] intervals = EnumHelper.split(values().length);
-    /**
      * Название погоды на русском.
      */
     private final String cyrillic;
@@ -36,6 +32,6 @@ public enum Weather {
      * @return Погода.
      */
     public static Weather random() {
-        return EnumHelper.randomElement(intervals, values());
+        return EnumHelper.randomElement(values());
     }
 }

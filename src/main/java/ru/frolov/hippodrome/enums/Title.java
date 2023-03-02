@@ -18,10 +18,6 @@ public enum Title {
     SOLVALLA("Солвалла");
 
     /**
-     * Концы отрезков распределения названий ипподрома.
-     */
-    private static final double[] intervals = EnumHelper.split(values().length);
-    /**
      * Название на русском.
      */
     private final String cyrillic;
@@ -32,6 +28,6 @@ public enum Title {
      * @return Название ипподрома.
      */
     public static Title random() {
-        return EnumHelper.randomElement(intervals, values());
+        return EnumHelper.randomElement(values());
     }
 }

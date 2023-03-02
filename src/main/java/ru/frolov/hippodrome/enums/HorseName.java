@@ -27,10 +27,6 @@ public enum HorseName {
     ADAYAR("Адаяр");
 
     /**
-     * Концы отрезков распределения имен лошадей.
-     */
-    private static final double[] intervals = EnumHelper.split(values().length);
-    /**
      * Имя на русском.
      */
     private final String cyrillic;
@@ -41,7 +37,7 @@ public enum HorseName {
      * @return Имя лошади.
      */
     public static HorseName random() {
-        return EnumHelper.randomElement(intervals, values());
+        return EnumHelper.randomElement(values());
     }
 
     /**
@@ -59,7 +55,6 @@ public enum HorseName {
             }
             return true;
         }).toList().toArray(new HorseName[0]);
-        return EnumHelper.randomElement(EnumHelper.split(horseNames.length),
-                horseNames);
+        return EnumHelper.randomElement(horseNames);
     }
 }
