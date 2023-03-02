@@ -147,8 +147,10 @@ public class HorseRacing {
      * @return Скачки.
      */
     public static HorseRacing random(int horseCount) {
-        if (horseCount < 1) {
-            throw new IllegalArgumentException("The number of horses cannot be less than one.");
+        if (horseCount > HorseName.values().length || horseCount < 1) {
+            throw new IllegalArgumentException(
+                    String.format("The number of horses cannot be less than 1 and more than %d.",
+                            HorseName.values().length));
         }
         final var horses = new Horse[horseCount];
         final var horseNames = new String[horseCount];
