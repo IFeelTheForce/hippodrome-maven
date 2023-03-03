@@ -40,6 +40,6 @@ public enum HorseBreed {
      * @return Порода лошади.
      */
     public static HorseBreed random() {
-        return EnumHelper.randomElement(values());
+        return EnumHelper.randomChoose(values());
     }
 }

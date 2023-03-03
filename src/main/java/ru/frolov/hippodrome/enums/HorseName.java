@@ -37,7 +37,7 @@ public enum HorseName {
      * @return Имя лошади.
      */
     public static HorseName random() {
-        return EnumHelper.randomElement(values());
+        return EnumHelper.randomChoose(values());
     }
 
     /**
@@ -55,6 +55,6 @@ public enum HorseName {
             }
             return true;
         }).toList().toArray(new HorseName[0]);
-        return EnumHelper.randomElement(horseNames);
+        return EnumHelper.randomChoose(horseNames);
     }
 }

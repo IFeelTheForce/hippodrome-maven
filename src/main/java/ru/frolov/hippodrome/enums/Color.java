@@ -12,6 +12,6 @@ public enum Color {
      * @return Порода лошади.
      */
     public static Color random() {
-        return EnumHelper.randomElement(values());
+        return EnumHelper.randomChoose(values());
     }
 }

@@ -13,7 +13,7 @@ final class EnumHelper {
      * @param <T>    Тип элементов массива.
      * @return Выбранный случайным образом элемент.
      */
-    public static <T> T randomElement(T[] values) {
+    public static <T> T randomChoose(T[] values) {
         return values[new Random().nextInt(values.length)];
     }
 }

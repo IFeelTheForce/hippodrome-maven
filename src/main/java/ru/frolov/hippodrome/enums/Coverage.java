@@ -32,6 +32,6 @@ public enum Coverage {
      * @return Покрытие ипподрома.
      */
     public static Coverage random() {
-        return EnumHelper.randomElement(values());
+        return EnumHelper.randomChoose(values());
     }
 }

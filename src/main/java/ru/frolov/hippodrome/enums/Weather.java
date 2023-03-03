@@ -32,6 +32,6 @@ public enum Weather {
      * @return Погода.
      */
     public static Weather random() {
-        return EnumHelper.randomElement(values());
+        return EnumHelper.randomChoose(values());
     }
 }

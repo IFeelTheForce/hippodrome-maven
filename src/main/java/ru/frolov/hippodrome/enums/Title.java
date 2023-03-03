@@ -28,6 +28,6 @@ public enum Title {
      * @return Название ипподрома.
      */
     public static Title random() {
-        return EnumHelper.randomElement(values());
+        return EnumHelper.randomChoose(values());
     }
 }

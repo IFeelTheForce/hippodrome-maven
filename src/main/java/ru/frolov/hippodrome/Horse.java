@@ -104,13 +104,8 @@ public class Horse {
      * @return Лошадь.
      */
     public static Horse random(String name) {
-        return builder()
-                .name(name)
-                .gender(Gender.random())
-                .breed(HorseBreed.random())
-                .color(Color.random())
-                .age(new Random().nextInt(1, 31))
-                .build();
+        return new Horse(name, Gender.random(), HorseBreed.random(), Color.random(),
+                new Random().nextInt(MIN_AGE, MAX_AGE + 1));
     }
 
     @Builder

@@ -12,6 +12,6 @@ public enum Gender {
      * @return Гендер лошади.
      */
     public static Gender random() {
-        return EnumHelper.randomElement(values());
+        return EnumHelper.randomChoose(values());
     }
 }

@@ -43,12 +43,8 @@ public class Hippodrome {
      * @return Ипподром.
      */
     public static Hippodrome random() {
-        return builder()
-                .title(Title.random().getCyrillic())
-                .coverage(Coverage.random())
-                .distanceMeters(new Random().nextDouble(MIN_DISTANCE_METERS,
-                        MAX_DISTANCE_METERS + 1D))
-                .build();
+        return new Hippodrome(Title.random().getCyrillic(), Coverage.random(),
+                new Random().nextDouble(MIN_DISTANCE_METERS, MAX_DISTANCE_METERS + Double.MIN_VALUE));
     }
 
     public Hippodrome(String title, Coverage coverage, double distanceMeters) {

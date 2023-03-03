@@ -5,7 +5,7 @@ import ru.frolov.hippodrome.RaceCache;
 
 public class Main {
     public static void main(String[] args) {
-        RaceCache raceCache = new RaceCache();
+        final RaceCache raceCache = new RaceCache();
         raceCache.generateNew();
         System.out.println("Ипподром:");
         System.out.println(raceCache.getCurrentRace().getHippodrome());

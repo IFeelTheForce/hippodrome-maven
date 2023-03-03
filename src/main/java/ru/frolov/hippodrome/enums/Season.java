@@ -31,6 +31,6 @@ public enum Season {
      * @return Время года.
      */
     public static Season random() {
-        return EnumHelper.randomElement(values());
+        return EnumHelper.randomChoose(values());
     }
 }
