@@ -36,6 +36,16 @@ public class RaceCacheImpl implements RaceCache {
     }
 
     @Override
+    public HorseRacing setHippodrome(Hippodrome hippodrome) {
+        if (horseRacing == null) {
+            throw new IllegalOperationException(
+                    "It is not possible to get the current race, as it is necessary to create it.");
+        }
+        horseRacing.setHippodrome(hippodrome);
+        return horseRacing;
+    }
+
+    @Override
     public Map<Horse, Double> getRaceResult() {
         if (horseRacing == null) {
             throw new IllegalOperationException(

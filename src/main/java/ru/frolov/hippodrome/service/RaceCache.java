@@ -23,6 +23,14 @@ public interface RaceCache {
     HorseRacing getCurrentRace();
 
     /**
+     * Изменить ипподром, на котором происходят скачки.
+     *
+     * @param hippodrome Ипподром.
+     * @return Скачки.
+     */
+    HorseRacing setHippodrome(Hippodrome hippodrome);
+
+    /**
      * Получить результаты скачек.
      *
      * @return Результаты скачек.
