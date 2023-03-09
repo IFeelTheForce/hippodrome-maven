@@ -1,5 +1,7 @@
 package ru.frolov.hippodrome.enums;
 
+import ru.frolov.hippodrome.enums.utils.EnumUtils;
+
 /**
  * Пол лошади.
  */
@@ -12,6 +14,6 @@ public enum Gender {
      * @return Гендер лошади.
      */
     public static Gender random() {
-        return EnumHelper.randomChoose(values());
+        return EnumUtils.randomChoose(values());
     }
 }

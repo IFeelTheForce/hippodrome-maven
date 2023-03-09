@@ -1,4 +1,4 @@
-package ru.frolov.hippodrome;
+package ru.frolov.hippodrome.models;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -326,7 +326,7 @@ public class HorseRacing {
      * @return Хэш-таблица, в которой ключи -- лошади, а значения -- время,
      * за которое лошадь проходит дистанцию ипподрома.
      */
-    public Map<Horse, Double> holdRace() {
+    public Map<Horse, Double> startRace() {
         if (horses.size() == 0) {
             throw new IllegalOperationException(
                     "The number of horses participating in the race cannot be less than one.");

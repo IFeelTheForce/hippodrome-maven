@@ -1,11 +1,11 @@
 package ru.frolov;
 
-import ru.frolov.hippodrome.Horse;
-import ru.frolov.hippodrome.RaceCache;
+import ru.frolov.hippodrome.models.Horse;
+import ru.frolov.hippodrome.service.impl.RaceCacheImpl;
 
 public class Main {
     public static void main(String[] args) {
-        final RaceCache raceCache = new RaceCache();
+        final RaceCacheImpl raceCache = new RaceCacheImpl();
         raceCache.generateNew();
         System.out.println("Ипподром:");
         System.out.println(raceCache.getCurrentRace().getHippodrome());

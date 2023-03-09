@@ -3,6 +3,7 @@ package ru.frolov.hippodrome.enums;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
+import ru.frolov.hippodrome.enums.utils.EnumUtils;
 
 /**
  * Погода.
@@ -32,6 +33,6 @@ public enum Weather {
      * @return Погода.
      */
     public static Weather random() {
-        return EnumHelper.randomChoose(values());
+        return EnumUtils.randomChoose(values());
     }
 }

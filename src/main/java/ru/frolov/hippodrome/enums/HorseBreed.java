@@ -3,6 +3,7 @@ package ru.frolov.hippodrome.enums;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
+import ru.frolov.hippodrome.enums.utils.EnumUtils;
 
 /**
  * Порода лошади.
@@ -40,6 +41,6 @@ public enum HorseBreed {
      * @return Порода лошади.
      */
     public static HorseBreed random() {
-        return EnumHelper.randomChoose(values());
+        return EnumUtils.randomChoose(values());
     }
 }

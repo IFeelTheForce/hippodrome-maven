@@ -1,11 +1,12 @@
-package ru.frolov.hippodrome.interfaces;
+package ru.frolov.hippodrome.service;
 
-import ru.frolov.hippodrome.Horse;
-import ru.frolov.hippodrome.HorseRacing;
+import ru.frolov.hippodrome.models.Hippodrome;
+import ru.frolov.hippodrome.models.Horse;
+import ru.frolov.hippodrome.models.HorseRacing;
 
 import java.util.Map;
 
-public interface IRaceCache {
+public interface RaceCache {
 
     /**
      * Создать скачки.

@@ -1,4 +1,4 @@
-package ru.frolov.hippodrome;
+package ru.frolov.hippodrome.models;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

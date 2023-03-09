@@ -1,5 +1,7 @@
 package ru.frolov.hippodrome.enums;
 
+import ru.frolov.hippodrome.enums.utils.EnumUtils;
+
 /**
  * Цвет лошади.
  */
@@ -12,6 +14,6 @@ public enum Color {
      * @return Порода лошади.
      */
     public static Color random() {
-        return EnumHelper.randomChoose(values());
+        return EnumUtils.randomChoose(values());
     }
 }

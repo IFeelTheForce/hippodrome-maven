@@ -3,6 +3,7 @@ package ru.frolov.hippodrome.enums;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
+import ru.frolov.hippodrome.enums.utils.EnumUtils;
 
 /**
  * Покрытие ипподрома.
@@ -32,6 +33,6 @@ public enum Coverage {
      * @return Покрытие ипподрома.
      */
     public static Coverage random() {
-        return EnumHelper.randomChoose(values());
+        return EnumUtils.randomChoose(values());
     }
 }

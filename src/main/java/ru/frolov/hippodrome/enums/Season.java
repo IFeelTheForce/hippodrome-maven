@@ -3,6 +3,7 @@ package ru.frolov.hippodrome.enums;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
+import ru.frolov.hippodrome.enums.utils.EnumUtils;
 
 /**
  * Время года.
@@ -31,6 +32,6 @@ public enum Season {
      * @return Время года.
      */
     public static Season random() {
-        return EnumHelper.randomChoose(values());
+        return EnumUtils.randomChoose(values());
     }
 }

@@ -1,11 +1,11 @@
-package ru.frolov.hippodrome.enums;
+package ru.frolov.hippodrome.enums.utils;
 
 import java.util.Random;
 
 /**
  * Вспомогательный класс для случайного выбора элемента перечисления.
  */
-final class EnumHelper {
+final public class EnumUtils {
     /**
      * Выбрать случайный элемент массива.
      *
