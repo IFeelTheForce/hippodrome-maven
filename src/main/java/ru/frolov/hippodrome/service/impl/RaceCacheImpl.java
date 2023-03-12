@@ -8,6 +8,7 @@ import ru.frolov.hippodrome.models.HorseRacing;
 import ru.frolov.hippodrome.service.RaceCache;
 
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Кэш гонок.
@@ -21,6 +22,12 @@ public class RaceCacheImpl implements RaceCache {
         return horseRacing;
     }
 
+    /**
+     * Создать скачки.
+     *
+     * @param horseCount Количество лошадей.
+     * @return Скачки.
+     */
     public HorseRacing generateNew(int horseCount) {
         horseRacing = HorseRacing.random(horseCount);
         return horseRacing;
@@ -28,29 +35,48 @@ public class RaceCacheImpl implements RaceCache {
 
     @Override
     public HorseRacing getCurrentRace() {
-        if (horseRacing == null) {
-            throw new IllegalOperationException(
-                    "It is not possible to get the current race, as it is necessary to create it.");
-        }
-        return horseRacing;
+        return Optional.ofNullable(horseRacing)
+                .orElseThrow(() -> new IllegalOperationException(
+                        "The race cannot be empty"
+                ));
     }
 
     @Override
     public HorseRacing setHippodrome(Hippodrome hippodrome) {
-        if (horseRacing == null) {
-            throw new IllegalOperationException(
-                    "It is not possible to get the current race, as it is necessary to create it.");
-        }
-        horseRacing.setHippodrome(hippodrome);
+        Optional.ofNullable(horseRacing)
+                .ifPresentOrElse(it -> it.setHippodrome(hippodrome),
+                        () -> {
+                            throw new IllegalOperationException("The race cannot be empty");
+                        });
+        return horseRacing;
+    }
+
+    @Override
+    public HorseRacing treatHorses() {
+        Optional.ofNullable(horseRacing)
+                .ifPresentOrElse(HorseRacing::treatHorses,
+                        () -> {
+                            throw new IllegalOperationException("The race cannot be empty");
+                        });
+        return horseRacing;
+    }
+
+    @Override
+    public HorseRacing feedHorses() {
+        Optional.ofNullable(horseRacing)
+                .ifPresentOrElse(HorseRacing::feedHorses,
+                        () -> {
+                            throw new IllegalOperationException("The race cannot be empty");
+                        });
         return horseRacing;
     }
 
     @Override
     public Map<Horse, Double> getRaceResult() {
-        if (horseRacing == null) {
-            throw new IllegalOperationException(
-                    "It is not possible to get the race result, as it is necessary to create a race.");
-        }
-        return horseRacing.startRace();
+        return Optional.ofNullable(horseRacing)
+                .map(HorseRacing::startRace)
+                .orElseThrow(() -> {
+                    throw new IllegalOperationException("The race cannot be empty");
+                });
     }
 }

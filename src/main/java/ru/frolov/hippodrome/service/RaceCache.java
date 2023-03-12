@@ -31,6 +31,20 @@ public interface RaceCache {
     HorseRacing setHippodrome(Hippodrome hippodrome);
 
     /**
+     * Вылечить лошадей.
+     *
+     * @return Скачки.
+     */
+    HorseRacing treatHorses();
+
+    /**
+     * Покормить лошадей.
+     *
+     * @return Скачки.
+     */
+    HorseRacing feedHorses();
+
+    /**
      * Получить результаты скачек.
      *
      * @return Результаты скачек.
