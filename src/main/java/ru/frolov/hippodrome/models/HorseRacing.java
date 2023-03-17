@@ -158,12 +158,7 @@ public class HorseRacing {
             horses[i] = Horse.random(HorseName.random(horseNames).getCyrillic());
             horseNames[i] = horses[i].getName();
         }
-        return builder()
-                .hippodrome(Hippodrome.random())
-                .horses(horses)
-                .weather(Weather.random())
-                .season(Season.random())
-                .build();
+        return new HorseRacing(Hippodrome.random(), Weather.random(), Season.random(), horses);
     }
 
     /**
@@ -187,7 +182,7 @@ public class HorseRacing {
      * @param horses Лошади, которые будут участвовать в скачках.
      */
     private void initHorses(Horse... horses) {
-        this.horses = new HashMap<>();
+        this.horses = new HashMap<>(horses.length);
         addHorses(horses);
     }
 
@@ -352,7 +347,7 @@ public class HorseRacing {
      * @return Массив лошадей.
      */
     public Horse[] getHorses() {
-        return horses.keySet().toArray(new Horse[0]);
+        return horses.keySet().toArray(Horse[]::new);
     }
 
     /**

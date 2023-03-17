@@ -6,6 +6,7 @@ import lombok.ToString;
 import ru.frolov.hippodrome.enums.utils.EnumUtils;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * Имя лошади.
@@ -48,14 +49,13 @@ public enum HorseName {
      * @return Имя лошади.
      */
     public static HorseName random(String... exclude) {
-        final var horseNames = Arrays.stream(values()).filter(horseName -> {
-            for (String name : exclude) {
-                if (name != null && name.equals(horseName.getCyrillic())) {
-                    return false;
-                }
-            }
-            return true;
-        }).toList().toArray(new HorseName[0]);
+        final var names = Arrays.stream(exclude)
+                .filter(Objects::nonNull)
+                .toList();
+        final var horseNames = Arrays.stream(values())
+                .filter(horseName -> !names.contains(horseName.cyrillic))
+                .toList()
+                .toArray(HorseName[]::new);
         return EnumUtils.randomChoose(horseNames);
     }
 }

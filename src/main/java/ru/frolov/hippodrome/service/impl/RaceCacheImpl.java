@@ -1,5 +1,7 @@
 package ru.frolov.hippodrome.service.impl;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 import ru.frolov.hippodrome.exceptions.IllegalOperationException;
 import ru.frolov.hippodrome.models.Hippodrome;
@@ -14,6 +16,8 @@ import java.util.Optional;
  * Кэш гонок.
  */
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class RaceCacheImpl implements RaceCache {
     private HorseRacing horseRacing;
 

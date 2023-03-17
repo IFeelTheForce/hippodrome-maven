@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3609511-37f3-4548-b7a3-2cbde5475286" name="Changes" comment="Maven deploy config">
+    <list default="true" id="a3609511-37f3-4548-b7a3-2cbde5475286" name="Changes" comment="RaceCache Optional refactor">
       <change afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/service/RaceCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/service/RaceCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/enums/HorseName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/models/HorseRacing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/models/HorseRacing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/service/impl/RaceCacheImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/frolov/hippodrome/service/impl/RaceCacheImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -301,7 +302,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678352256705</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="RaceCache Optional refactor">
+      <created>1678622184912</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1678622184912</updated>
+    </task>
+    <task id="LOCAL-00025" summary="RaceCache Optional refactor">
+      <created>1678622253202</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1678622253202</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -328,6 +343,18 @@
     <MESSAGE value="Refactor" />
     <MESSAGE value="Hippodrome change method in RaceCache" />
     <MESSAGE value="Maven deploy config" />
-    <option name="LAST_COMMIT_MESSAGE" value="Maven deploy config" />
+    <MESSAGE value="RaceCache Optional refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="RaceCache Optional refactor" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/frolov/Main.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
